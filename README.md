@@ -1,0 +1,2 @@
+# template_react26
+
