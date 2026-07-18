@@ -20,7 +20,6 @@ export default function LiveClasses() {
 
     const studentEmail = user?.email || '';
     const isStudent = user?.role === 'student';
-    const isTeacher = user?.role === 'teacher';
 
     const openJoin = (s) => { setSelected(s); setCode(''); setMessage(''); };
 

@@ -1,4 +1,4 @@
-import { BookOpen, GraduationCap } from 'lucide-react';
+import { GraduationCap } from 'lucide-react';
 import StudentPageShell from './StudentPageShell';
 import Card from '../../components/ui/Card';
 

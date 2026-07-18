@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { CalendarDays, CheckCircle2, CreditCard, Sparkles, TrendingUp, Video } from 'lucide-react';
+import { CreditCard, Sparkles, TrendingUp, Video } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { purchaseCourse, getPurchasedCourses } from '../../data/studentStore';
 import StudentPageShell from './StudentPageShell';

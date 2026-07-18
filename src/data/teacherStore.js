@@ -304,7 +304,7 @@ export function getStudentRoster() {
   );
 }
 
-export default {
+const teacherStore = {
   getCourses,
   createCourse,
   updateCourse,
@@ -322,3 +322,5 @@ export default {
   getAiInsights,
   getStudentRoster,
 };
+
+export default teacherStore;

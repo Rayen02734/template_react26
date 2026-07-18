@@ -20,4 +20,6 @@ export function peekOTP(email) {
   return entry ? entry.code : null;
 }
 
-export default { generateOTP, verifyOTP, peekOTP };
+const otpStore = { generateOTP, verifyOTP, peekOTP };
+
+export default otpStore;

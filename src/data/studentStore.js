@@ -31,8 +31,10 @@ export function isCoursePurchased(email, courseId) {
   return purchases.includes(courseId);
 }
 
-export default {
+const studentStore = {
   getPurchasedCourses,
   purchaseCourse,
   isCoursePurchased,
 };
+
+export default studentStore;

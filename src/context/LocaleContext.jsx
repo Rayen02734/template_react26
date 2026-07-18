@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import en from '../locales/en.json';
 import fr from '../locales/fr.json';
 import ar from '../locales/ar.json';
@@ -28,11 +28,11 @@ export function LocaleProvider({ children }) {
         document.documentElement.dir = locale === 'ar' ? 'rtl' : 'ltr';
     }, [locale]);
 
-    const t = (key, params = {}) => translateValue(locale, key, params);
+    const t = useCallback((key, params = {}) => translateValue(locale, key, params), [locale]);
 
     const value = useMemo(
         () => ({ locale, setLocale, t, languages: { en: 'EN', fr: 'FR', ar: 'AR' } }),
-        [locale]
+        [locale, t]
     );
 
     return <LocaleContext.Provider value={value}>{children}</LocaleContext.Provider>;
