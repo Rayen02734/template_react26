@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { mockUsers } from '../data/mockUsers';
-import { useAuth } from '../context/AuthContext';
 import { useLocale } from '../context/LocaleContext';
 import { generateOTP } from '../data/otpStore';
 
@@ -9,7 +8,6 @@ export default function RegisterPage() {
     const [form, setForm] = useState({ name: '', email: '', password: '' });
     const [message, setMessage] = useState('');
     const { t } = useLocale();
-    const { } = useAuth();
     const navigate = useNavigate();
 
     const handleSubmit = (event) => {

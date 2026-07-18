@@ -1,4 +1,4 @@
-import { CalendarDays, ExternalLink, Video } from 'lucide-react';
+import { ExternalLink, Video } from 'lucide-react';
 import StudentPageShell from './StudentPageShell';
 import Card from '../../components/ui/Card';
 import Button from '../../components/ui/Button';

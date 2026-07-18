@@ -1,4 +1,4 @@
-import { BellRing, Sparkles } from 'lucide-react';
+import { BellRing } from 'lucide-react';
 import StudentPageShell from './StudentPageShell';
 import Card from '../../components/ui/Card';
 
