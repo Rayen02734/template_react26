@@ -1,9 +1,12 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, BookOpen, BrainCircuit, GraduationCap, PlayCircle, Sparkles, Star, Users } from 'lucide-react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import { useLocale } from '../context/LocaleContext';
+import SignInPage from './SignInPage';
+import RegisterPage from './RegisterPage';
 
 const stats = [
     { label: 'Active learners', value: '120K+' },
@@ -45,6 +48,32 @@ const testimonials = [
 
 export default function LandingPage() {
     const { t } = useLocale();
+    const [activeForm, setActiveForm] = useState('landing');
+
+    const renderAuthForm = () => {
+        if (activeForm === 'signin') {
+            return <SignInPage />;
+        }
+
+        if (activeForm === 'register') {
+            return <RegisterPage />;
+        }
+
+        return null;
+    };
+
+    if (activeForm !== 'landing') {
+        return (
+            <div className="bg-slate-50 px-6 py-10 dark:bg-slate-950">
+                <div className="mx-auto flex max-w-5xl flex-col gap-6">
+                    <Button variant="ghost" className="w-fit" onClick={() => setActiveForm('landing')}>
+                        ← Back to home
+                    </Button>
+                    {renderAuthForm()}
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className="bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.16),_transparent_30%),linear-gradient(135deg,_#f8fafc_0%,_#eef4ff_100%)]">
@@ -60,10 +89,10 @@ export default function LandingPage() {
                         {t('landingSubheading')}
                     </p>
                     <div className="mt-8 flex flex-wrap gap-3">
-                        <Button as="a" href="/register" size="lg" variant="primary">
+                        <Button size="lg" variant="primary" onClick={() => setActiveForm('register')}>
                             {t('startLearning')} <ArrowRight className="ml-2" size={18} />
                         </Button>
-                        <Button as="a" href="/signin" size="lg" variant="secondary">
+                        <Button size="lg" variant="secondary" onClick={() => setActiveForm('signin')}>
                             {t('signIn')}
                         </Button>
                     </div>
