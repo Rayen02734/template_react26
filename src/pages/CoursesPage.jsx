@@ -62,7 +62,7 @@ export default function CoursesPage() {
     ];
 
     return (
-        <div className="bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.16),_transparent_28%),linear-gradient(135deg,_#f8fafc_0%,_#eef4ff_100%)] dark:bg-slate-950">
+        <div className="bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.16),_transparent_28%),linear-gradient(135deg,_#f8fafc_0%,_#eef4ff_100%)] dark:bg-none dark:bg-slate-950">
             <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
                 <div className="rounded-[32px] border border-cyan-100 bg-white/80 p-6 shadow-[0_30px_140px_-48px_rgba(15,23,42,0.35)] backdrop-blur dark:border-slate-700 dark:bg-slate-900/80 md:p-8 lg:p-10">
                     <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
