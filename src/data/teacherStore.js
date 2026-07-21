@@ -323,4 +323,4 @@ const teacherStore = {
   getStudentRoster,
 };
 
-export default teacherStore;
+export { teacherStore as default };

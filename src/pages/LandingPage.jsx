@@ -76,76 +76,85 @@ export default function LandingPage() {
     }
 
     return (
-        <div className="bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.16),_transparent_30%),linear-gradient(135deg,_#f8fafc_0%,_#eef4ff_100%)]">
-            <motion.section initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45 }} className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-28">
-                <div className="max-w-2xl">
-                    <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-3 py-1 text-sm font-medium text-cyan-700">
-                        <Sparkles size={16} /> New • AI-assisted learning paths
-                    </div>
-                    <h1 className="mt-6 text-4xl font-semibold leading-tight text-slate-950 sm:text-5xl lg:text-6xl">
-                        {t('landingHeading')}
-                    </h1>
-                    <p className="mt-6 text-lg leading-8 text-slate-600 sm:text-xl">
-                        {t('landingSubheading')}
-                    </p>
-                    <div className="mt-8 flex flex-wrap gap-3">
-                        <Button size="lg" variant="primary" onClick={() => setActiveForm('register')}>
-                            {t('startLearning')} <ArrowRight className="ml-2" size={18} />
-                        </Button>
-                        <Button size="lg" variant="secondary" onClick={() => setActiveForm('signin')}>
-                            {t('signIn')}
-                        </Button>
-                    </div>
-                    <div className="mt-8 flex flex-wrap gap-6 text-sm text-slate-600">
-                        <div className="flex items-center gap-2"><GraduationCap size={18} className="text-cyan-500" /> Expert-led cohorts</div>
-                        <div className="flex items-center gap-2"><PlayCircle size={18} className="text-cyan-500" /> Live sessions weekly</div>
-                    </div>
-                </div>
+        <div className="relative min-h-screen w-full overflow-hidden bg-white dark:bg-slate-950">
+            {/* Hero section: white in light mode, dark gradient in dark mode */}
+            <div className="relative overflow-hidden bg-white dark:bg-gradient-to-br dark:from-slate-900 dark:via-slate-800 dark:to-slate-950">
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-transparent to-blue-500/0 dark:from-cyan-500/10 dark:to-blue-500/10 pointer-events-none"></div>
 
-                <Card className="p-0 overflow-hidden">
-                    <div className="border-b border-slate-200 bg-gradient-to-br from-cyan-500/10 via-white to-blue-50 p-6 dark:border-slate-800 dark:from-cyan-950/40 dark:via-slate-900 dark:to-blue-950/30">
-                        <div className="flex items-center justify-between">
-                            <div>
-                                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-600">This week</p>
-                                <h2 className="mt-2 text-2xl font-semibold text-slate-900 dark:text-white">Your momentum is building</h2>
-                            </div>
-                            <div className="rounded-full bg-white/80 px-3 py-1 text-sm font-semibold text-cyan-700 shadow-sm dark:bg-slate-900/70 dark:text-cyan-300">+12% growth</div>
+                <motion.section initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45 }} className="relative z-10 mx-auto grid w-full max-w-7xl gap-6 px-4 py-16 sm:px-6 sm:py-20 md:gap-8 md:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-28">
+                    <div className="flex flex-col justify-center max-w-2xl">
+                        <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-3 py-1 text-xs sm:text-sm font-medium text-cyan-700 w-fit dark:border-cyan-200 dark:bg-cyan-50/20 dark:backdrop-blur-sm dark:text-cyan-100">
+                            <Sparkles size={14} className="sm:w-4 sm:h-4" /> New • AI-assisted learning paths
                         </div>
-                        <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                            <div className="rounded-[20px] border border-slate-200 bg-white/90 p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900/80">
-                                <p className="text-sm text-slate-500">Completed lessons</p>
-                                <p className="mt-2 text-3xl font-semibold text-slate-950 dark:text-white">18</p>
-                            </div>
-                            <div className="rounded-[20px] border border-cyan-100 bg-cyan-50 p-5 shadow-sm dark:border-cyan-900/50 dark:bg-cyan-950/30">
-                                <p className="text-sm text-cyan-700 dark:text-cyan-300">Next milestone</p>
-                                <p className="mt-2 text-lg font-semibold text-slate-900 dark:text-white">Launch your first portfolio project</p>
-                            </div>
+                        <h1 className="mt-4 sm:mt-6 text-3xl sm:text-4xl font-semibold leading-tight text-slate-950 dark:text-white md:text-5xl lg:text-6xl">
+                            {t('landingHeading')}
+                        </h1>
+                        <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-7 sm:leading-8 text-slate-600 dark:text-gray-200 md:text-xl">
+                            {t('landingSubheading')}
+                        </p>
+                        <div className="mt-6 sm:mt-8 flex flex-wrap gap-3">
+                            <Button size="lg" variant="primary" onClick={() => setActiveForm('register')} className="text-sm sm:text-base">
+                                {t('startLearning')} <ArrowRight className="ml-2 sm:w-[18px] sm:h-[18px]" size={16} />
+                            </Button>
+                            <Button size="lg" variant="secondary" onClick={() => setActiveForm('signin')} className="text-sm sm:text-base">
+                                {t('signIn')}
+                            </Button>
+                        </div>
+                        <div className="mt-6 sm:mt-8 flex flex-wrap gap-4 sm:gap-6 text-xs sm:text-sm text-slate-500 dark:text-gray-300">
+                            <div className="flex items-center gap-2"><GraduationCap size={16} className="sm:w-[18px] sm:h-[18px] text-cyan-500 dark:text-cyan-400" /> Expert-led cohorts</div>
+                            <div className="flex items-center gap-2"><PlayCircle size={16} className="sm:w-[18px] sm:h-[18px] text-cyan-500 dark:text-cyan-400" /> Live sessions weekly</div>
                         </div>
                     </div>
-                    <div className="p-6">
-                        <div className="flex items-center justify-between text-sm text-slate-500">
-                            <span>Weekly focus</span>
-                            <span className="font-semibold text-cyan-600">Live now</span>
-                        </div>
-                        <div className="mt-4 rounded-[20px] border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950/50">
-                            <div className="flex items-center justify-between">
-                                <div>
-                                    <p className="font-semibold text-slate-900 dark:text-white">Design systems sprint</p>
-                                    <p className="text-sm text-slate-500">Today · 6:30 PM</p>
+
+                    {/* FIX: cette carte était toujours en fond sombre (slate-900/800/950),
+                        même en mode clair. On ajoute désormais une version claire par défaut
+                        et on réserve le dégradé sombre au dark: mode. */}
+                    <Card className="p-0 overflow-hidden shadow-2xl h-fit lg:mt-0">
+                        <div className="border-b border-slate-200 bg-gradient-to-br from-slate-50 via-white to-slate-100 p-4 sm:p-6 backdrop-blur-sm dark:border-slate-700 dark:from-slate-900/90 dark:via-slate-800/90 dark:to-slate-950/90">
+                            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                                <div className="flex-1">
+                                    <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.3em] text-cyan-600 dark:text-cyan-400">This week</p>
+                                    <h2 className="mt-2 text-xl sm:text-2xl font-semibold text-slate-950 dark:text-white">Your momentum is building</h2>
                                 </div>
-                                <div className="rounded-full bg-emerald-500/10 px-3 py-1 text-sm font-semibold text-emerald-600">Ready</div>
+                                <div className="rounded-full bg-cyan-50 px-3 py-1 text-xs sm:text-sm font-semibold text-cyan-700 shadow-sm whitespace-nowrap dark:bg-cyan-500/20 dark:text-cyan-200">+12% growth</div>
+                            </div>
+                            <div className="mt-4 sm:mt-6 grid gap-3 sm:gap-4 sm:grid-cols-2">
+                                <div className="rounded-[20px] border border-slate-200 bg-slate-50 p-4 sm:p-5 shadow-sm dark:border-slate-600 dark:bg-slate-800/50">
+                                    <p className="text-xs sm:text-sm text-slate-500 dark:text-gray-400">Completed lessons</p>
+                                    <p className="mt-2 text-2xl sm:text-3xl font-semibold text-slate-950 dark:text-white">18</p>
+                                </div>
+                                <div className="rounded-[20px] border border-cyan-200 bg-cyan-50 p-4 sm:p-5 shadow-sm dark:border-cyan-600/50 dark:bg-cyan-900/30">
+                                    <p className="text-xs sm:text-sm text-cyan-700 dark:text-cyan-300">Next milestone</p>
+                                    <p className="mt-2 text-sm sm:text-lg font-semibold text-slate-950 dark:text-white">Launch your first portfolio project</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </Card>
-            </motion.section>
+                        <div className="p-4 sm:p-6">
+                            <div className="flex items-center justify-between text-xs sm:text-sm text-slate-500">
+                                <span>Weekly focus</span>
+                                <span className="font-semibold text-cyan-600">Live now</span>
+                            </div>
+                            <div className="mt-4 rounded-[20px] border border-slate-200 bg-slate-50 p-3 sm:p-4 dark:border-slate-800 dark:bg-slate-950/50">
+                                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-3">
+                                    <div className="flex-1">
+                                        <p className="text-sm sm:text-base font-semibold text-slate-900 dark:text-white">Design systems sprint</p>
+                                        <p className="text-xs sm:text-sm text-slate-500 mt-1">Today · 6:30 PM</p>
+                                    </div>
+                                    <div className="rounded-full bg-emerald-500/10 px-3 py-1 text-xs sm:text-sm font-semibold text-emerald-600 whitespace-nowrap">Ready</div>
+                                </div>
+                            </div>
+                        </div>
+                    </Card>
+                </motion.section>
+            </div>
 
-            <section className="mx-auto max-w-7xl px-6 py-8 lg:px-8">
+            {/* Rest of the page: white (light) / slate-950 (dark) */}
+            <section className="mx-auto w-full max-w-7xl px-4 sm:px-6 py-8 lg:px-8">
                 <div className="grid gap-4 md:grid-cols-3">
                     {stats.map((stat) => (
                         <Card key={stat.label} className="transition duration-200 hover:-translate-y-1">
-                            <p className="text-3xl font-semibold text-slate-950 dark:text-white">{stat.value}</p>
-                            <p className="mt-2 text-sm text-slate-500">{stat.label}</p>
+                            <p className="text-2xl sm:text-3xl font-semibold text-slate-950 dark:text-white">{stat.value}</p>
+                            <p className="mt-2 text-xs sm:text-sm text-slate-500">{stat.label}</p>
                         </Card>
                     ))}
                 </div>
@@ -203,15 +212,18 @@ export default function LandingPage() {
 
             <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
                 <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-                    <Card className="bg-gradient-to-br from-slate-950 to-slate-800 text-white">
-                        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-400">Featured instructors</p>
+                    {/* FIX: cette carte était toujours en fond sombre (from-slate-950 to-slate-800
+                        text-white), même en mode clair. On lui donne un fond clair par défaut
+                        et le dégradé sombre passe désormais sous dark:. */}
+                    <Card className="bg-gradient-to-br from-slate-50 to-white text-slate-950 dark:from-slate-950 dark:to-slate-800 dark:text-white">
+                        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-600 dark:text-cyan-400">Featured instructors</p>
                         <h2 className="mt-3 text-3xl font-semibold">Learn from specialists shaping the future</h2>
-                        <p className="mt-4 text-sm leading-7 text-slate-300">From AI strategy to language immersion, our mentors combine deep craft with supportive coaching.</p>
-                        <div className="mt-6 flex items-center gap-3 rounded-[20px] border border-white/10 bg-white/10 p-4">
-                            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-cyan-500 text-lg font-semibold">AL</div>
+                        <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">From AI strategy to language immersion, our mentors combine deep craft with supportive coaching.</p>
+                        <div className="mt-6 flex items-center gap-3 rounded-[20px] border border-slate-200 bg-slate-50 p-4 dark:border-white/10 dark:bg-white/10">
+                            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-cyan-500 text-lg font-semibold text-white">AL</div>
                             <div>
                                 <p className="font-semibold">Alicia Laurent</p>
-                                <p className="text-sm text-slate-300">Design systems lead</p>
+                                <p className="text-sm text-slate-500 dark:text-slate-300">Design systems lead</p>
                             </div>
                         </div>
                     </Card>
@@ -221,7 +233,7 @@ export default function LandingPage() {
                                 <div className="flex items-center gap-1 text-cyan-500">
                                     {Array.from({ length: 5 }).map((_, index) => <Star key={index} size={16} fill="currentColor" />)}
                                 </div>
-                                <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">“{item.quote}”</p>
+                                <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">"{item.quote}"</p>
                                 <div className="mt-5">
                                     <p className="font-semibold text-slate-900 dark:text-white">{item.name}</p>
                                     <p className="text-sm text-slate-500">{item.role}</p>

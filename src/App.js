@@ -3,6 +3,7 @@ import PublicLayout from './layouts/PublicLayout';
 import LandingPage from './pages/LandingPage';
 import AboutPage from './pages/AboutPage';
 import CoursesPage from './pages/CoursesPage';
+import PaymentPage from './pages/PaymentPage';
 import SignInPage from './pages/SignInPage';
 import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage';
@@ -49,6 +50,7 @@ function App() {
         <Route element={<PublicLayout />}>
           <Route path="/" element={<LandingPage />} />
           <Route path="/courses" element={<CoursesPage />} />
+          <Route path="/payment" element={<PaymentPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signin" element={<SignInPage />} />

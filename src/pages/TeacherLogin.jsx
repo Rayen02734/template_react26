@@ -32,14 +32,14 @@ export default function TeacherLogin() {
                 <form onSubmit={handleSubmit} className="mt-8 space-y-4">
                     <div>
                         <label className="mb-2 block text-sm text-slate-700 dark:text-slate-300">{t('email')}</label>
-                        <input value={email} onChange={(e) => setEmail(e.target.value)} className="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3" placeholder="teacher@growup.com" />
+                        <input value={email} onChange={(e) => setEmail(e.target.value)} className="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-slate-900 outline-none dark:border-slate-700 dark:bg-slate-950 dark:text-white" placeholder="teacher@growup.com" />
                     </div>
                     <div>
                         <label className="mb-2 block text-sm text-slate-700 dark:text-slate-300">{t('password')}</label>
-                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3" placeholder="••••••" />
+                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-slate-900 outline-none dark:border-slate-700 dark:bg-slate-950 dark:text-white" placeholder="••••••" />
                     </div>
                     {error ? <p className="text-sm text-rose-500">{error}</p> : null}
-                    <button className="w-full rounded-full bg-cyan-500 px-4 py-3 font-semibold text-slate-950">{t('signIn')}</button>
+                    <button className="w-full rounded-full bg-cyan-500 px-4 py-3 font-semibold text-slate-950 transition hover:bg-cyan-400 dark:bg-cyan-600 dark:text-white dark:hover:bg-cyan-500">{t('signIn')}</button>
                 </form>
             </div>
         </div>

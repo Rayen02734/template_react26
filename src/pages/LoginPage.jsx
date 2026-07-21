@@ -63,7 +63,7 @@ export default function LoginPage() {
                         />
                     </div>
                     {error ? <p className="text-sm text-rose-500">{error}</p> : null}
-                    <button className="w-full rounded-full bg-cyan-500 px-4 py-3 font-semibold text-slate-950 transition hover:bg-cyan-400">{t('continueButton')}</button>
+                    <button className="w-full rounded-full bg-cyan-500 px-4 py-3 font-semibold text-slate-950 transition hover:bg-cyan-400 dark:bg-cyan-600 dark:text-white dark:hover:bg-cyan-500">{t('continueButton')}</button>
                 </form>
                 <p className="mt-6 text-center text-sm text-slate-600 dark:text-slate-400">
                     No account yet?{' '}

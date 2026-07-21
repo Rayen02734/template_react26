@@ -21,7 +21,7 @@ export default function CourseCard({ title, description, category, badge, icon, 
                 <span className="text-sm text-slate-500 dark:text-slate-500">{badge}</span>
             </div>
             <div className="mt-6 flex items-center justify-between">
-                <button className="rounded-full bg-cyan-500 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400">
+                <button className="rounded-full bg-cyan-500 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400 dark:bg-cyan-600 dark:text-white dark:hover:bg-cyan-500">
                     Enroll Now
                 </button>
             </div>

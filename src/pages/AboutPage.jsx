@@ -54,11 +54,11 @@ export default function AboutPage() {
                             ))}
                         </ul>
                     </div>
-                    <div className="rounded-3xl border border-cyan-500/20 bg-cyan-500/10 p-8">
+                    <div className="rounded-3xl border border-cyan-500/20 bg-gradient-to-br from-cyan-50 to-blue-50 p-8 dark:border-cyan-900/40 dark:from-cyan-950/30 dark:to-blue-950/30">
                         <h3 className="text-2xl font-semibold text-slate-900 dark:text-white">{t('whyChooseUs')}</h3>
                         <ul className="mt-6 space-y-4">
                             {teamHighlights.map((item) => (
-                                <li key={item} className="rounded-2xl border border-cyan-400/20 bg-slate-950/50 px-4 py-3 text-slate-200">
+                                <li key={item} className="rounded-2xl border border-cyan-400/20 bg-white/50 px-4 py-3 text-slate-900 dark:border-cyan-900/50 dark:bg-slate-900/50 dark:text-slate-200">
                                     {item}
                                 </li>
                             ))}

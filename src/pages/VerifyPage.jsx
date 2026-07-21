@@ -48,7 +48,7 @@ export default function VerifyPage() {
                         placeholder="Enter code"
                     />
                     {message ? <p className="text-sm text-rose-500">{message}</p> : null}
-                    <button className="w-full rounded-full bg-cyan-500 px-4 py-3 font-semibold text-slate-950">{t('verify')}</button>
+                    <button className="w-full rounded-full bg-cyan-500 px-4 py-3 font-semibold text-slate-950 transition hover:bg-cyan-400 dark:bg-cyan-600 dark:text-white dark:hover:bg-cyan-500">{t('verify')}</button>
                 </form>
                 <p className="mt-4 text-sm text-slate-500">{t('checkSpam')} <Link to="/register" className="text-cyan-500">{t('restartSignUp')}</Link>.</p>
                 <div className="mt-4 text-xs text-slate-400">{t('devPreviewCode')} <code className="rounded bg-slate-100 px-2 py-1 dark:bg-slate-800">{peekOTP(email)}</code></div>

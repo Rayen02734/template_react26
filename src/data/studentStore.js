@@ -37,4 +37,4 @@ const studentStore = {
   isCoursePurchased,
 };
 
-export default studentStore;
+export { studentStore as default };

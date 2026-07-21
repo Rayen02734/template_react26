@@ -1,9 +1,9 @@
 import { forwardRef } from 'react';
 
 const variants = {
-    primary: 'bg-cyan-500 text-slate-950 shadow-lg shadow-cyan-500/20 hover:bg-cyan-400',
-    secondary: 'border border-slate-300 bg-white text-slate-700 hover:border-cyan-400 hover:text-cyan-500 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200',
-    ghost: 'bg-transparent text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800',
+    primary: 'bg-cyan-500 text-slate-950 shadow-lg shadow-cyan-500/20 hover:bg-cyan-400 dark:bg-cyan-600 dark:text-white dark:hover:bg-cyan-500 dark:shadow-cyan-600/30',
+    secondary: 'border border-slate-300 bg-white text-slate-700 hover:border-cyan-400 hover:text-cyan-500 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-cyan-500 dark:hover:text-cyan-300 dark:hover:bg-slate-800',
+    ghost: 'bg-transparent text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800 transition-colors',
 };
 
 const sizes = {
