@@ -24,12 +24,12 @@ export default function StudentNotificationsPage() {
                 {notifications.map((item) => (
                     <Card key={item.title}>
                         <div className="flex items-start gap-3">
-                            <div className="rounded-2xl bg-cyan-50 p-3 text-cyan-600 dark:bg-cyan-950/30">
+                            <div className="rounded-2xl bg-surface p-3 text-cyan-600">
                                 <BellRing className="h-5 w-5" />
                             </div>
                             <div>
-                                <p className="font-semibold text-slate-900 dark:text-white">{item.title}</p>
-                                <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">{item.detail}</p>
+                                <p className="font-semibold text-text-primary">{item.title}</p>
+                                <p className="mt-1 text-sm text-text-secondary">{item.detail}</p>
                             </div>
                         </div>
                     </Card>

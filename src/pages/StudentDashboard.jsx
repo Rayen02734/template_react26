@@ -272,17 +272,17 @@ export default function StudentDashboard() {
                                             </div>
                                             <div className="mt-5 space-y-4">
                                                 {purchasedCourses.map((course) => (
-                                                    <div key={course.id} className="rounded-[24px] border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950/50">
+                                                    <div key={course.id} className="rounded-[24px] border border-card-border bg-surface p-4">
                                                         <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
                                                             <div className="flex gap-4">
                                                                 <img src={course.image} alt={course.title} className="h-20 w-24 rounded-[18px] object-cover" />
                                                                 <div>
-                                                                    <p className="font-semibold text-slate-900 dark:text-white">{course.title}</p>
-                                                                    <p className="mt-1 text-sm text-slate-500">{course.teacher} · {course.category}</p>
-                                                                    <div className="mt-3 h-2 w-40 rounded-full bg-slate-200 dark:bg-slate-800">
-                                                                        <div className="h-2 rounded-full bg-cyan-500" style={{ width: `${course.progress}%` }} />
+                                                                    <p className="font-semibold text-text-primary">{course.title}</p>
+                                                                    <p className="mt-1 text-sm text-text-secondary">{course.teacher} · {course.category}</p>
+                                                                    <div className="mt-3 h-2 w-40 rounded-full bg-surface-muted">
+                                                                        <div className="h-2 rounded-full bg-primary" style={{ width: `${course.progress}%` }} />
                                                                     </div>
-                                                                    <p className="mt-2 text-sm text-cyan-600">{course.progress}% complete</p>
+                                                                    <p className="mt-2 text-sm text-primary">{course.progress}% complete</p>
                                                                 </div>
                                                             </div>
                                                             <Button variant="primary" size="sm" className="self-start">
@@ -304,16 +304,16 @@ export default function StudentDashboard() {
                                             </div>
                                             <div className="mt-5 space-y-3">
                                                 {purchasedCourses.flatMap((course) => course.sessions.map((session) => (
-                                                    <div key={`${course.id}-${session.title}`} className="rounded-[22px] border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950/50">
+                                                    <div key={`${course.id}-${session.title}`} className="rounded-[22px] border border-card-border bg-surface p-4">
                                                         <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
                                                             <div>
-                                                                <p className="font-semibold text-slate-900 dark:text-white">{course.title}</p>
-                                                                <p className="text-sm text-slate-500">{session.title} · {course.teacher}</p>
-                                                                <p className="mt-1 text-sm text-slate-500">{session.date} · {session.time}</p>
+                                                                <p className="font-semibold text-text-primary">{course.title}</p>
+                                                                <p className="text-sm text-text-secondary">{session.title} · {course.teacher}</p>
+                                                                <p className="mt-1 text-sm text-text-secondary">{session.date} · {session.time}</p>
                                                             </div>
-                                                            <div className="text-sm text-slate-500">
-                                                                <p className="font-semibold text-cyan-600">Meeting key: {session.accessKey}</p>
-                                                                <a href={session.link} className="mt-2 inline-flex items-center gap-2 text-cyan-600" target="_blank" rel="noreferrer">
+                                                            <div className="text-sm text-text-secondary">
+                                                                <p className="font-semibold text-primary">Meeting key: {session.accessKey}</p>
+                                                                <a href={session.link} className="mt-2 inline-flex items-center gap-2 text-primary" target="_blank" rel="noreferrer">
                                                                     <ExternalLink className="h-4 w-4" /> Google Meet link
                                                                 </a>
                                                             </div>
@@ -368,8 +368,8 @@ export default function StudentDashboard() {
                                                 </div>
                                                 <BrainCircuit className="h-5 w-5 text-cyan-500" />
                                             </div>
-                                            <div className="mt-4 rounded-[22px] border border-cyan-100 bg-cyan-50 p-4 dark:border-cyan-900/40 dark:bg-cyan-950/30">
-                                                <p className="text-sm leading-7 text-slate-700 dark:text-slate-300">Your AI coach sees that your strongest area is {purchasedCourses[0]?.category || 'design'} and recommends a short review of interaction states and one live practice session this week.</p>
+                                            <div className="mt-4 rounded-[22px] border border-card-border bg-surface p-4">
+                                                <p className="text-sm leading-7 text-text-secondary">Your AI coach sees that your strongest area is {purchasedCourses[0]?.category || 'design'} and recommends a short review of interaction states and one live practice session this week.</p>
                                             </div>
                                         </Card>
                                     </div>
@@ -408,25 +408,25 @@ export default function StudentDashboard() {
                                             <Trophy className="h-5 w-5 text-cyan-500" />
                                         </div>
                                         <div className="mt-5 space-y-4">
-                                            <div className="rounded-[20px] border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950/50">
-                                                <div className="flex items-center justify-between text-sm text-slate-500">
+                                            <div className="rounded-[20px] border border-card-border bg-surface p-4">
+                                                <div className="flex items-center justify-between text-sm text-text-secondary">
                                                     <span>Course completion</span>
-                                                    <span className="font-semibold text-cyan-600">{overviewStats.averageProgress}%</span>
+                                                    <span className="font-semibold text-primary">{overviewStats.averageProgress}%</span>
                                                 </div>
-                                                <div className="mt-3 h-2 rounded-full bg-slate-200 dark:bg-slate-800">
-                                                    <div className="h-2 rounded-full bg-cyan-500" style={{ width: `${overviewStats.averageProgress}%` }} />
+                                                <div className="mt-3 h-2 rounded-full bg-surface-muted">
+                                                    <div className="h-2 rounded-full bg-primary" style={{ width: `${overviewStats.averageProgress}%` }} />
                                                 </div>
                                             </div>
-                                            <div className="rounded-[20px] border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950/50">
-                                                <div className="flex items-center justify-between text-sm text-slate-500">
+                                            <div className="rounded-[20px] border border-card-border bg-surface p-4">
+                                                <div className="flex items-center justify-between text-sm text-text-secondary">
                                                     <span>Attendance rate</span>
-                                                    <span className="font-semibold text-cyan-600">93%</span>
+                                                    <span className="font-semibold text-primary">93%</span>
                                                 </div>
                                             </div>
-                                            <div className="rounded-[20px] border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950/50">
-                                                <div className="flex items-center justify-between text-sm text-slate-500">
+                                            <div className="rounded-[20px] border border-card-border bg-surface p-4">
+                                                <div className="flex items-center justify-between text-sm text-text-secondary">
                                                     <span>Learning streak</span>
-                                                    <span className="font-semibold text-cyan-600">7 days</span>
+                                                    <span className="font-semibold text-primary">7 days</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -442,11 +442,11 @@ export default function StudentDashboard() {
                                             </div>
                                             <Trophy className="h-5 w-5 text-cyan-500" />
                                         </div>
-                                        <div className="mt-4 rounded-[24px] border border-slate-200 bg-gradient-to-br from-cyan-50 to-blue-50 p-5 dark:border-slate-800 dark:from-cyan-950/30 dark:to-blue-950/30">
-                                            <p className="text-sm text-slate-600 dark:text-slate-300">Certificates unlock once your course reaches 100%. Your current workspace is preparing a polished preview for the moment you finish the final milestone.</p>
-                                            <div className="mt-4 flex items-center gap-3 rounded-[20px] border border-slate-200 bg-white/70 p-4 dark:border-slate-800 dark:bg-slate-950/40">
+                                        <div className="mt-4 rounded-[24px] border border-card-border bg-surface p-5">
+                                            <p className="text-sm text-text-secondary">Certificates unlock once your course reaches 100%. Your current workspace is preparing a polished preview for the moment you finish the final milestone.</p>
+                                            <div className="mt-4 flex items-center gap-3 rounded-[20px] border border-card-border bg-card-bg/80 p-4">
                                                 <CheckCircle2 className="h-5 w-5 text-emerald-500" />
-                                                <span className="font-semibold text-slate-900 dark:text-white">AI Product Design certificate preview ready</span>
+                                                <span className="font-semibold text-text-primary">AI Product Design certificate preview ready</span>
                                             </div>
                                             <Button variant="primary" size="sm" className="mt-4">
                                                 <Download className="mr-2 h-4 w-4" /> Simulated download
@@ -464,12 +464,12 @@ export default function StudentDashboard() {
                                         </div>
                                         <div className="mt-4 space-y-3">
                                             {payments.length ? payments.map((payment) => (
-                                                <div key={payment.id} className="rounded-[20px] border border-slate-200 bg-slate-50 p-3 dark:border-slate-800 dark:bg-slate-950/50">
+                                                <div key={payment.id} className="rounded-[20px] border border-card-border bg-surface p-3">
                                                     <div className="flex items-center justify-between">
-                                                        <p className="font-semibold text-slate-900 dark:text-white">{payment.course}</p>
+                                                        <p className="font-semibold text-text-primary">{payment.course}</p>
                                                         <Badge variant={payment.status === 'Paid' ? 'success' : 'neutral'} size="sm">{payment.status}</Badge>
                                                     </div>
-                                                    <p className="mt-2 text-sm text-slate-500">${payment.price} · {payment.date}</p>
+                                                    <p className="mt-2 text-sm text-text-secondary">${payment.price} · {payment.date}</p>
                                                 </div>
                                             )) : <p className="text-sm text-slate-500">No payments yet.</p>}
                                         </div>
@@ -487,9 +487,9 @@ export default function StudentDashboard() {
                                         </div>
                                         <div className="mt-4 space-y-3">
                                             {notifications.map((notification) => (
-                                                <div key={notification.id} className="rounded-[20px] border border-slate-200 bg-slate-50 p-3 dark:border-slate-800 dark:bg-slate-950/50">
-                                                    <p className="font-semibold text-slate-900 dark:text-white">{notification.title}</p>
-                                                    <p className="mt-1 text-sm text-slate-500">{notification.detail}</p>
+                                                <div key={notification.id} className="rounded-[20px] border border-card-border bg-surface p-3">
+                                                    <p className="font-semibold text-text-primary">{notification.title}</p>
+                                                    <p className="mt-1 text-sm text-text-secondary">{notification.detail}</p>
                                                 </div>
                                             ))}
                                         </div>
