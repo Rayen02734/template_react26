@@ -17,16 +17,16 @@ export default function StudentProfilePage() {
             <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
                 <Card>
                     <div className="flex items-center gap-3">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 text-lg font-semibold text-white">SD</div>
+                        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white text-lg font-semibold">SD</div>
                         <div>
-                            <p className="font-semibold text-slate-900 dark:text-white">Student Demo</p>
-                            <p className="text-sm text-slate-500">Advanced learner</p>
+                            <p className="font-semibold text-text-primary">Student Demo</p>
+                            <p className="text-sm text-text-secondary">Advanced learner</p>
                         </div>
                     </div>
-                    <div className="mt-5 space-y-3 text-sm text-slate-600 dark:text-slate-300">
-                        <div className="flex items-center gap-2"><Mail className="h-4 w-4 text-cyan-500" /> student@growup.com</div>
-                        <div className="flex items-center gap-2"><Phone className="h-4 w-4 text-cyan-500" /> +216 20 000 000</div>
-                        <div className="flex items-center gap-2"><MapPin className="h-4 w-4 text-cyan-500" /> Tunis, Tunisia</div>
+                    <div className="mt-5 space-y-3 text-sm text-text-secondary">
+                        <div className="flex items-center gap-2"><Mail className="h-4 w-4 text-primary" /> student@growup.com</div>
+                        <div className="flex items-center gap-2"><Phone className="h-4 w-4 text-primary" /> +216 20 000 000</div>
+                        <div className="flex items-center gap-2"><MapPin className="h-4 w-4 text-primary" /> Tunis, Tunisia</div>
                     </div>
                 </Card>
 

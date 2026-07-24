@@ -2,8 +2,8 @@ import { forwardRef } from 'react';
 
 const variants = {
     primary: 'bg-primary text-white shadow-card-sm hover:bg-primary-hover',
-    secondary: 'bg-white border border-card-border text-text-primary hover:bg-slate-50',
-    ghost: 'bg-transparent text-text-primary hover:bg-slate-50 transition-colors',
+    secondary: 'bg-surface-strong border border-card-border text-text-primary hover:bg-surface',
+    ghost: 'bg-transparent text-text-primary hover:bg-surface transition-colors',
 };
 
 const sizes = {

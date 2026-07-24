@@ -163,18 +163,18 @@ export default function StudentDashboard() {
     }
 
     return (
-        <div className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.18),_transparent_35%),linear-gradient(135deg,_#f8fafc,_#eef2ff)] px-4 py-4 text-slate-900 transition-colors dark:bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.18),_transparent_35%),linear-gradient(135deg,_#020617,_#0f172a)] dark:text-slate-100 sm:px-6 lg:px-8 lg:py-8">
+        <div className="min-h-screen bg-page-bg px-4 py-4 text-text-primary transition-colors sm:px-6 lg:px-8 lg:py-8">
             <div className="mx-auto max-w-7xl">
-                <header className="mb-6 flex flex-col gap-4 rounded-[28px] border border-slate-200/80 bg-white/80 px-6 py-5 shadow-xl shadow-slate-200/60 backdrop-blur dark:border-slate-800 dark:bg-slate-900/80 dark:shadow-slate-950/30 lg:flex-row lg:items-center lg:justify-between">
+                <header className="mb-6 flex flex-col gap-4 rounded-[28px] border border-card-border bg-card-bg px-6 py-5 shadow-card-sm lg:flex-row lg:items-center lg:justify-between">
                     <div>
                         <p className="text-sm font-semibold uppercase tracking-[0.32em] text-cyan-500">Student Workspace</p>
-                        <h1 className="mt-1 text-2xl font-semibold text-slate-900 dark:text-white">Welcome back, {user.name || 'Learner'}</h1>
+                        <h1 className="mt-1 text-2xl font-semibold text-text-primary">Welcome back, {user.name || 'Learner'}</h1>
                     </div>
                     <div className="flex flex-wrap items-center gap-3">
-                        <div className="rounded-2xl border border-emerald-200 bg-emerald-50 px-3 py-2 text-sm font-medium text-emerald-700 dark:border-emerald-900/50 dark:bg-emerald-950/40 dark:text-emerald-300">
+                        <div className="rounded-2xl border border-card-border bg-surface px-3 py-2 text-sm font-medium text-text-primary">
                             {purchasedCourses.length ? `${purchasedCourses.length} active course${purchasedCourses.length > 1 ? 's' : ''}` : 'No course unlocked yet'}
                         </div>
-                        <div className="rounded-2xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-600 dark:border-slate-800 dark:bg-slate-950/50 dark:text-slate-300">
+                        <div className="rounded-2xl border border-card-border bg-surface px-3 py-2 text-sm text-text-secondary">
                             Premium LMS learning experience
                         </div>
                     </div>
@@ -182,13 +182,13 @@ export default function StudentDashboard() {
 
                 <div className="flex flex-col gap-6 lg:flex-row lg:items-start">
                     <StudentSidebar activeSection={activeSection} onSelectSection={setActiveSection} userName={user.name} />
-                    <main className="flex-1 min-w-0 rounded-[30px] border border-slate-200/80 bg-white/80 p-5 shadow-xl shadow-slate-200/60 backdrop-blur dark:border-slate-800 dark:bg-slate-900/80 dark:shadow-slate-950/30 lg:p-8">
+                    <main className="flex-1 min-w-0 rounded-[30px] border border-card-border bg-card-bg p-5 shadow-card-sm lg:p-8">
                         {!purchasedCourses.length ? (
                             <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} className="space-y-6">
-                                <div className="rounded-[28px] border border-slate-200 bg-gradient-to-br from-cyan-50 to-blue-50 p-8 dark:border-slate-800 dark:from-cyan-950/30 dark:to-blue-950/30">
-                                    <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-600">Unlock your learning workspace</p>
-                                    <h2 className="mt-3 text-3xl font-semibold text-slate-950 dark:text-white">Purchase a course to access your student dashboard</h2>
-                                    <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">Your learning portal becomes fully active after a successful payment. Choose a course below to simulate checkout, enroll instantly, and unlock live sessions, quizzes, progress tracking, AI guidance, and certificates.</p>
+                                <div className="rounded-[28px] border border-card-border bg-surface p-8 shadow-card-sm">
+                                    <p className="text-sm font-semibold uppercase tracking-[0.3em] text-text-secondary">Unlock your learning workspace</p>
+                                    <h2 className="mt-3 text-3xl font-semibold text-text-primary">Purchase a course to access your student dashboard</h2>
+                                    <p className="mt-4 max-w-2xl text-sm leading-7 text-text-secondary">Your learning portal becomes fully active after a successful payment. Choose a course below to simulate checkout, enroll instantly, and unlock live sessions, quizzes, progress tracking, AI guidance, and certificates.</p>
                                 </div>
 
                                 <div className="grid gap-6 lg:grid-cols-2">
@@ -216,7 +216,7 @@ export default function StudentDashboard() {
                                 {loading ? (
                                     <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
                                         {Array.from({ length: 4 }).map((_, index) => (
-                                            <div key={index} className="h-28 animate-pulse rounded-[24px] border border-slate-200 bg-slate-100 dark:border-slate-800 dark:bg-slate-950/50" />
+                                            <div key={index} className="h-28 animate-pulse rounded-[24px] border border-card-border bg-surface" />
                                         ))}
                                     </div>
                                 ) : (
@@ -335,7 +335,7 @@ export default function StudentDashboard() {
                                             </div>
                                             <div className="mt-5 space-y-4">
                                                 {purchasedCourses.map((course) => (
-                                                    <div key={`${course.id}-quiz`} className="rounded-[22px] border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950/50">
+                                                    <div key={`${course.id}-quiz`} className="rounded-[22px] border border-card-border bg-surface p-4">
                                                         <div className="flex items-center justify-between gap-3">
                                                             <div>
                                                                 <p className="font-semibold text-slate-900 dark:text-white">{course.quiz.title}</p>
@@ -392,7 +392,7 @@ export default function StudentDashboard() {
                                                     <p className="mt-2 inline-flex items-center gap-2 text-sm text-cyan-600"><Video className="h-4 w-4" /> Live class</p>
                                                 </div>
                                             )))}
-                                            <div className="rounded-[20px] border border-slate-200 bg-slate-50 p-3 dark:border-slate-800 dark:bg-slate-950/50">
+                                            <div className="rounded-[20px] border border-card-border bg-surface p-3">
                                                 <p className="font-semibold text-slate-900 dark:text-white">Assignment reminder</p>
                                                 <p className="mt-1 text-sm text-slate-500">Finish the recap exercises before Friday.</p>
                                             </div>

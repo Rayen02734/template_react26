@@ -10,7 +10,7 @@ export default function Badge({ children, variant = 'neutral', size = 'sm', clas
         pending: 'bg-status-pending-bg text-status-pending-text',
         danger: 'bg-status-danger-bg text-status-danger-text',
         primary: 'bg-primary/10 text-primary',
-        neutral: 'bg-slate-100 text-text-primary',
+        neutral: 'bg-surface text-text-primary',
     };
 
     return (

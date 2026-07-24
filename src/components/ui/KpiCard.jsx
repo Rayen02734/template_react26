@@ -9,16 +9,16 @@ export default function KpiCard({
     className = '',
 }) {
     const accentClasses = {
-        lavender: 'bg-kpi-lavender text-violet-700 dark:bg-violet-950/40 dark:text-violet-300',
-        mint: 'bg-kpi-mint text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300',
-        peach: 'bg-kpi-peach text-amber-700 dark:bg-amber-950/40 dark:text-amber-300',
-        pink: 'bg-kpi-pink text-rose-700 dark:bg-rose-950/40 dark:text-rose-300',
-        slate: 'bg-slate-100 text-slate-900 dark:bg-slate-800 dark:text-slate-100',
+        lavender: 'bg-[var(--color-kpi-lavender)] text-[var(--color-kpi-lavender-text)] dark:bg-[var(--color-kpi-lavender-bg-dark)] dark:text-[var(--color-kpi-lavender-text-dark)]',
+        mint: 'bg-[var(--color-kpi-mint)] text-[var(--color-kpi-mint-text)] dark:bg-[var(--color-kpi-mint-bg-dark)] dark:text-[var(--color-kpi-mint-text-dark)]',
+        peach: 'bg-[var(--color-kpi-peach)] text-[var(--color-kpi-peach-text)] dark:bg-[var(--color-kpi-peach-bg-dark)] dark:text-[var(--color-kpi-peach-text-dark)]',
+        pink: 'bg-[var(--color-kpi-pink)] text-[var(--color-kpi-pink-text)] dark:bg-[var(--color-kpi-pink-bg-dark)] dark:text-[var(--color-kpi-pink-text-dark)]',
+        slate: 'bg-[var(--color-kpi-slate)] text-[var(--color-kpi-slate-text)] dark:bg-[var(--color-kpi-slate-bg-dark)] dark:text-[var(--color-kpi-slate-text-dark)]',
     };
 
     const trendClasses = {
-        positive: 'bg-status-success-bg text-status-success-text dark:bg-emerald-900/25 dark:text-emerald-300',
-        negative: 'bg-status-danger-bg text-status-danger-text dark:bg-rose-900/25 dark:text-rose-300',
+        positive: 'bg-status-success-bg text-status-success-text',
+        negative: 'bg-status-danger-bg text-status-danger-text',
     };
 
     const monogramText = monogram ||

@@ -5,31 +5,78 @@
 
 :root {
   color-scheme: light;
+
+  --color-page-bg: #F7F8FA;
+  --color-card-bg: #FFFFFF;
+  --color-card-border: #E5E7EB;
+  --color-sidebar-bg: #0F1218;
+  --color-surface: #F8FAFC;
+  --color-surface-strong: #FFFFFF;
+  --color-surface-muted: #F3F4F6;
+  --color-input-bg: #FFFFFF;
+  --color-input-border: #D1D5DB;
+  --color-text-primary: #0F1115;
+  --color-text-secondary: #6B7280;
+  --color-text-muted: #6B7280;
+  --color-border: #E5E7EB;
+  --color-status-success-bg: #DCFCE7;
+  --color-status-success-text: #16A34A;
+  --color-status-pending-bg: #FEF3C7;
+  --color-status-pending-text: #D97706;
+  --color-status-danger-bg: #FEE2E2;
+  --color-status-danger-text: #DC2626;
+  --color-kpi-lavender: #F3E8FF;
+  --color-kpi-mint: #ECFDF5;
+  --color-kpi-peach: #FFF7ED;
+  --color-kpi-pink: #FFF1F2;
+  --color-kpi-slate: #F8FAFC;
 }
 
-html {
+html.dark {
+  color-scheme: dark;
+
+  --color-page-bg: #020617;
+  --color-card-bg: #0F172A;
+  --color-card-border: #334155;
+  --color-sidebar-bg: #020617;
+  --color-surface: #0B1120;
+  --color-surface-strong: #111827;
+  --color-surface-muted: #111827;
+  --color-input-bg: #111827;
+  --color-input-border: #334155;
+  --color-text-primary: #F8FAFC;
+  --color-text-secondary: #94A3B8;
+  --color-text-muted: #94A3B8;
+  --color-border: #334155;
+  --color-status-success-bg: rgba(34,197,94,0.15);
+  --color-status-success-text: #86efac;
+  --color-status-pending-bg: rgba(245,158,11,0.15);
+  --color-status-pending-text: #fbbf24;
+  --color-status-danger-bg: rgba(248,113,113,0.18);
+  --color-status-danger-text: #fb7185;
+  --color-kpi-lavender: #312E81;
+  --color-kpi-mint: #064E3B;
+  --color-kpi-peach: #78350F;
+  --color-kpi-pink: #831843;
+  --color-kpi-slate: #111827;
+}
+
+html,
+body {
   scroll-behavior: smooth;
   width: 100%;
   height: 100%;
-  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100%;
   overflow-x: hidden;
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #F7F8FA;
-  color: #0F1115;
-}
-
-body.dark {
-  background-color: #020617;
-  color: #f8fafc;
+  background-color: var(--color-page-bg);
+  color: var(--color-text-primary);
 }
 
 * {
