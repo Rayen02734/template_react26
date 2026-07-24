@@ -5,6 +5,7 @@ import { getCourses, getSessions, getTeacherStats } from '../../data/teacherStor
 import MetricCard from '../../components/teacher/MetricCard';
 import SectionHeader from '../../components/teacher/SectionHeader';
 import Card from '../../components/ui/Card';
+import Badge from '../../components/ui/Badge';
 import { useLocale } from '../../context/LocaleContext';
 
 const statCards = [
@@ -51,7 +52,7 @@ export default function TeacherHome() {
                 <Card>
                     <div className="flex items-center justify-between">
                         <h2 className="text-lg font-semibold text-slate-900 dark:text-white">{t('upcomingLiveSessions')}</h2>
-                        <span className="rounded-full bg-cyan-500/10 px-3 py-1 text-sm font-medium text-cyan-600">{t('scheduled')}</span>
+                        <Badge variant="pending">{t('scheduled')}</Badge>
                     </div>
                     <div className="mt-4 space-y-3">
                         {sessions.map((session) => (
@@ -77,7 +78,7 @@ export default function TeacherHome() {
                                 <div key={item.name} className="rounded-[20px] bg-slate-50 p-3 dark:bg-slate-950/50">
                                     <div className="flex items-center justify-between gap-3">
                                         <p className="font-medium text-slate-900 dark:text-white">{item.name}</p>
-                                        <span className="rounded-full bg-cyan-50 px-3 py-1 text-xs font-semibold text-cyan-700 dark:bg-cyan-950/40 dark:text-cyan-300">{item.badge}</span>
+                                        <Badge variant={item.badge && item.badge.toLowerCase().includes('live') ? 'primary' : item.badge && item.badge.toLowerCase().includes('high') ? 'primary' : item.badge && item.badge.toLowerCase().includes('review') ? 'pending' : 'neutral'} size="sm">{item.badge}</Badge>
                                     </div>
                                     <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">{item.action}</p>
                                     <p className="mt-1 text-xs uppercase tracking-[0.2em] text-cyan-600">{item.time}</p>

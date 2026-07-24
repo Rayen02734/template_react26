@@ -1,5 +1,6 @@
 import React from 'react';
 import SectionHeader from '../../components/teacher/SectionHeader';
+import Badge from '../../components/ui/Badge';
 import { useLocale } from '../../context/LocaleContext';
 
 export default function TeacherSettings() {
@@ -29,9 +30,7 @@ export default function TeacherSettings() {
                                     <p className="font-semibold text-slate-900 dark:text-white">{item.title}</p>
                                     <p className="mt-1 text-sm text-slate-500">{item.description}</p>
                                 </div>
-                                <span className={`rounded-full px-3 py-1 text-sm font-semibold ${item.active ? 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300' : 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300'}`}>
-                                    {item.active ? t('enabled') : t('paused')}
-                                </span>
+                                <Badge variant={item.active ? 'success' : 'neutral'} size="sm">{item.active ? t('enabled') : t('paused')}</Badge>
                             </div>
                         ))}
                     </div>

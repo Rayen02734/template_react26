@@ -251,7 +251,7 @@ export default function StudentDashboard() {
                                                     <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-600">My Learning</p>
                                                     <h2 className="mt-2 text-xl font-semibold text-slate-900 dark:text-white">Continue your purchased courses</h2>
                                                 </div>
-                                                <div className="rounded-full bg-cyan-500/10 px-3 py-1 text-sm font-medium text-cyan-600">Live progress</div>
+                                                <Badge variant="primary">Live progress</Badge>
                                             </div>
                                             <div className="mt-5 space-y-4">
                                                 {purchasedCourses.map((course) => (
@@ -283,7 +283,7 @@ export default function StudentDashboard() {
                                                     <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-600">Live Courses</p>
                                                     <h2 className="mt-2 text-xl font-semibold text-slate-900 dark:text-white">Join your next session</h2>
                                                 </div>
-                                                <div className="rounded-full bg-emerald-500/10 px-3 py-1 text-sm font-medium text-emerald-600">Ready</div>
+                                                <Badge variant="success">Ready</Badge>
                                             </div>
                                             <div className="mt-5 space-y-3">
                                                 {purchasedCourses.flatMap((course) => course.sessions.map((session) => (

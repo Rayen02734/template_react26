@@ -5,6 +5,7 @@ import { purchaseCourse, getPurchasedCourses } from '../../data/studentStore';
 import StudentPageShell from './StudentPageShell';
 import Card from '../../components/ui/Card';
 import Button from '../../components/ui/Button';
+import Badge from '../../components/ui/Badge';
 
 const catalog = [
     { id: 'ai-product-design', title: 'AI Product Design', teacher: 'Alicia Laurent', category: 'Product', price: 129, progress: 68 },
@@ -83,7 +84,7 @@ export default function StudentDashboardPage() {
                                                 <p className="font-semibold text-slate-900 dark:text-white">{course.title}</p>
                                                 <p className="text-sm text-slate-500">{course.teacher} · {course.category}</p>
                                             </div>
-                                            <span className="rounded-full bg-cyan-500/10 px-3 py-1 text-sm font-semibold text-cyan-600">{course.progress}%</span>
+                                            <Badge variant="primary" size="sm">{course.progress}%</Badge>
                                         </div>
                                         <div className="mt-3 h-2 rounded-full bg-slate-200 dark:bg-slate-800">
                                             <div className="h-2 rounded-full bg-cyan-500" style={{ width: `${course.progress}%` }} />
