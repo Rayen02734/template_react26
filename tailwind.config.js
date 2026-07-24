@@ -2,7 +2,64 @@ module.exports = {
   darkMode: 'class',
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        // map existing cyan usages to the new primary scale
+        cyan: {
+          50: '#F3F6FF',
+          100: '#E8EEFF',
+          200: '#C8D7FF',
+          300: '#9FB7FF',
+          400: '#2F46D6',
+          500: '#3D5AFE',
+          600: '#3149E0',
+        },
+        primary: {
+          DEFAULT: '#3D5AFE',
+          hover: '#2F46D6',
+        },
+        'text-primary': '#0F1115',
+        'text-secondary': '#6B7280',
+        'page-bg': '#F7F8FA',
+        'card-bg': '#FFFFFF',
+        'card-border': '#E5E7EB',
+        'sidebar-bg': '#0F1218',
+        status: {
+          success: {
+            bg: '#DCFCE7',
+            text: '#16A34A',
+          },
+          pending: {
+            bg: '#FEF3C7',
+            text: '#D97706',
+          },
+          danger: {
+            bg: '#FEE2E2',
+            text: '#DC2626',
+          },
+        },
+        kpi: {
+          lavender: '#F3E8FF',
+          mint: '#ECFDF5',
+          peach: '#FFF7ED',
+          pink: '#FFF1F2',
+        },
+      },
+      fontFamily: {
+        sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+      },
+      boxShadow: {
+        'card-sm': '0 6px 18px rgba(15, 17, 21, 0.06)',
+      },
+      borderRadius: {
+        '2xl': '1rem',
+        xl: '0.75rem',
+      },
+      fontSize: {
+        'h1-lg': ['40px', { lineHeight: '1.05', fontWeight: '700' }],
+        'kpi': ['32px', { lineHeight: '1', fontWeight: '700' }],
+      },
+    },
   },
   plugins: [],
 };

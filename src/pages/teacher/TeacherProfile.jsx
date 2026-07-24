@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import SectionHeader from '../../components/teacher/SectionHeader';
+import Badge from '../../components/ui/Badge';
 import { useLocale } from '../../context/LocaleContext';
 
 export default function TeacherProfile() {
@@ -27,7 +28,7 @@ export default function TeacherProfile() {
                 eyebrow={t('profile')}
                 title={t('instructorProfile')}
                 description={t('teacherProfileDescription')}
-                action={saved ? <div className="rounded-full bg-emerald-50 px-3 py-1 text-sm font-semibold text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300">{t('saved')}</div> : null}
+                action={saved ? <Badge variant="success">{t('saved')}</Badge> : null}
             />
             <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
                 <div className="rounded-3xl border border-slate-200 bg-slate-50 p-5 shadow-sm dark:border-slate-800 dark:bg-slate-950/50">

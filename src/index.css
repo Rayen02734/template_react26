@@ -23,8 +23,8 @@ body {
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f8fafc;
-  color: #0f172a;
+  background-color: #F7F8FA;
+  color: #0F1115;
 }
 
 body.dark {
@@ -37,5 +37,21 @@ body.dark {
 }
 
 ::selection {
-  background-color: rgba(34, 211, 238, 0.35);
+  background-color: rgba(61, 90, 254, 0.18);
+}
+
+h1 {
+  font-size: 2.25rem; /* 36px */
+  line-height: 1.05;
+  font-weight: 800;
+  color: #0F1115;
+}
+
+/* Small uppercase labels */
+.label-uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: #6B7280;
+  font-size: 12px;
 }

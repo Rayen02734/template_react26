@@ -18,19 +18,19 @@ export default function Sidebar({ onLogout }) {
     ];
 
     return (
-        <aside className="w-full rounded-[32px] border border-slate-200 bg-white/80 p-6 shadow-[0_24px_80px_-24px_rgba(15,23,42,0.22)] backdrop-blur dark:border-slate-800 dark:bg-slate-900/80 lg:w-72">
+        <aside className="w-full rounded-2xl bg-sidebar-bg text-white p-6 lg:w-72">
             <div className="flex items-center justify-between">
                 <div>
-                    <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-500">{t('admin')}</p>
-                    <h2 className="mt-2 text-2xl font-semibold text-slate-900 dark:text-white">{t('growUpConsole')}</h2>
+                    <p className="text-xs font-semibold uppercase tracking-wider text-text-secondary">{t('admin')}</p>
+                    <h2 className="mt-2 text-2xl font-semibold text-white">{t('growUpConsole')}</h2>
                 </div>
-                <button onClick={toggleTheme} className="rounded-full border border-slate-300 p-2 text-slate-600 transition hover:border-cyan-400 hover:text-cyan-500 dark:border-slate-700 dark:text-slate-300" aria-label="Toggle theme">
+                <button onClick={toggleTheme} className="rounded-xl p-2 text-sm bg-white/5" aria-label="Toggle theme">
                     {theme === 'dark' ? '☀️' : '🌙'}
                 </button>
             </div>
-            <div className="mt-6 rounded-[24px] border border-cyan-100 bg-cyan-50/70 p-4 dark:border-cyan-900/40 dark:bg-cyan-950/30">
-                <div className="flex items-center gap-2 text-sm font-semibold text-cyan-700 dark:text-cyan-300"><Sparkles size={16} /> {t('operationalOverview')}</div>
-                <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">{t('everythingYourTeamNeeds')}</p>
+            <div className="mt-6 rounded-xl bg-white/4 p-4">
+                <div className="flex items-center gap-2 text-sm font-semibold text-white/90"><Sparkles size={16} /> {t('operationalOverview')}</div>
+                <p className="mt-2 text-sm text-white/70">{t('everythingYourTeamNeeds')}</p>
             </div>
             <nav className="mt-6 space-y-2">
                 {links.map((link) => {
@@ -40,19 +40,21 @@ export default function Sidebar({ onLogout }) {
                             key={link.to}
                             to={link.to}
                             className={({ isActive }) =>
-                                `flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium transition ${isActive
-                                    ? 'bg-cyan-500 text-slate-950 shadow-lg shadow-cyan-500/20'
-                                    : 'text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800'
+                                `flex items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium transition ${isActive
+                                    ? 'bg-primary/10 text-white'
+                                    : 'text-white/80 hover:bg-white/5'
                                 }`
                             }
                         >
-                            <Icon size={16} />
-                            {link.label}
+                            <div className="w-8 h-8 shrink-0 rounded-md bg-white/6 flex items-center justify-center text-sm text-white/90">
+                                <Icon size={16} />
+                            </div>
+                            <span className="flex-1">{link.label}</span>
                         </NavLink>
                     );
                 })}
             </nav>
-            <button onClick={onLogout} className="mt-8 flex w-full items-center justify-center gap-2 rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-cyan-400 hover:text-cyan-500 dark:border-slate-700 dark:text-slate-300">
+            <button onClick={onLogout} className="mt-8 flex w-full items-center justify-center gap-2 rounded-xl bg-white/5 px-4 py-2 text-sm font-semibold text-white">
                 <LogOut size={16} /> {t('logout')}
             </button>
         </aside>

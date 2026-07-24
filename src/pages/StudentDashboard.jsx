@@ -5,6 +5,7 @@ import { ArrowRight, BookOpen, BrainCircuit, CalendarDays, CheckCircle2, Clock3,
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import StudentSidebar from '../components/StudentSidebar';
+import Badge from '../components/ui/Badge';
 import { useAuth } from '../context/AuthContext';
 import { isCoursePurchased, purchaseCourse } from '../data/studentStore';
 
@@ -449,7 +450,7 @@ export default function StudentDashboard() {
                                                 <div key={payment.id} className="rounded-[20px] border border-slate-200 bg-slate-50 p-3 dark:border-slate-800 dark:bg-slate-950/50">
                                                     <div className="flex items-center justify-between">
                                                         <p className="font-semibold text-slate-900 dark:text-white">{payment.course}</p>
-                                                        <span className="rounded-full bg-emerald-500/10 px-2.5 py-1 text-xs font-semibold text-emerald-600">{payment.status}</span>
+                                                        <Badge variant={payment.status === 'Paid' ? 'success' : 'neutral'} size="sm">{payment.status}</Badge>
                                                     </div>
                                                     <p className="mt-2 text-sm text-slate-500">${payment.price} · {payment.date}</p>
                                                 </div>

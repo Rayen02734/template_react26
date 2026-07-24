@@ -4,6 +4,8 @@ const users = [
     { name: 'Sara Kim', email: 'sara@example.com', status: 'Active' },
 ];
 
+import Badge from '../components/ui/Badge';
+
 export default function AdminUsers() {
     return (
         <div>
@@ -15,7 +17,7 @@ export default function AdminUsers() {
                             <p className="font-medium text-slate-900 dark:text-white">{user.name}</p>
                             <p className="text-sm text-slate-500 dark:text-slate-400">{user.email}</p>
                         </div>
-                        <span className="rounded-full bg-cyan-500/10 px-3 py-1 text-sm text-cyan-500">{user.status}</span>
+                        <Badge variant={user.status === 'Active' ? 'success' : user.status === 'Pending' ? 'pending' : 'neutral'}>{user.status}</Badge>
                     </div>
                 ))}
             </div>

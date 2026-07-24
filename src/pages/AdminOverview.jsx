@@ -1,5 +1,6 @@
 import { Activity, ArrowUpRight, BadgeCheck, Clock3, Sparkles } from 'lucide-react';
 import Card from '../components/ui/Card';
+import Badge from '../components/ui/Badge';
 
 const cards = [
     { title: 'Revenue', value: '$48.2K', note: '+18.2% this month', accent: 'cyan' },
@@ -24,11 +25,11 @@ export default function AdminOverview() {
         <div>
             <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
                 <div>
-                    <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-500">Overview</p>
-                    <h1 className="mt-2 text-3xl font-semibold text-slate-950 dark:text-white">Platform snapshot</h1>
-                    <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">Monitor growth, learner activity, and operations from one elegant control center.</p>
+                    <p className="text-sm font-semibold uppercase tracking-[0.3em] text-text-secondary">Overview</p>
+                    <h1 className="mt-2 text-3xl font-semibold text-text-primary">Platform snapshot</h1>
+                    <p className="mt-2 text-sm text-text-secondary">Monitor growth, learner activity, and operations from one elegant control center.</p>
                 </div>
-                <button className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-cyan-400 hover:text-cyan-500 dark:border-slate-700 dark:text-slate-300">
+                <button className="inline-flex items-center gap-2 rounded-xl border border-card-border px-4 py-2 text-sm font-semibold text-text-primary transition hover:border-primary hover:text-primary">
                     <Sparkles size={16} /> Export report
                 </button>
             </div>
@@ -37,11 +38,11 @@ export default function AdminOverview() {
                 {cards.map((card) => (
                     <Card key={card.title} className="transition duration-200 hover:-translate-y-1">
                         <div className="flex items-center justify-between">
-                            <p className="text-sm text-slate-500">{card.title}</p>
+                            <p className="text-sm text-text-secondary">{card.title}</p>
                             <div className="rounded-full bg-cyan-50 p-2 text-cyan-600 dark:bg-cyan-950/40"><Activity size={16} /></div>
                         </div>
-                        <p className="mt-4 text-2xl font-semibold text-slate-950 dark:text-white">{card.value}</p>
-                        <p className="mt-2 flex items-center gap-1 text-sm text-cyan-600"><ArrowUpRight size={14} /> {card.note}</p>
+                        <p className="mt-4 text-2xl font-semibold text-text-primary">{card.value}</p>
+                        <p className="mt-2 flex items-center gap-1 text-sm text-primary"><ArrowUpRight size={14} /> {card.note}</p>
                     </Card>
                 ))}
             </div>
@@ -50,17 +51,20 @@ export default function AdminOverview() {
                 <Card>
                     <div className="flex items-center justify-between">
                         <h2 className="text-xl font-semibold text-slate-950 dark:text-white">Recent users</h2>
-                        <span className="rounded-full bg-emerald-500/10 px-3 py-1 text-sm font-semibold text-emerald-600">Active now</span>
+                        <Badge variant="success">Active now</Badge>
                     </div>
                     <div className="mt-4 space-y-3">
                         {recentUsers.map((user) => (
-                            <div key={user.name} className="flex items-center justify-between rounded-[20px] border border-slate-200 px-4 py-3 dark:border-slate-800">
+                            <div key={user.name} className="flex items-center justify-between rounded-xl border border-card-border px-4 py-3">
                                 <div>
                                     <p className="font-medium text-slate-900 dark:text-white">{user.name}</p>
                                     <p className="text-sm text-slate-500 dark:text-slate-400">{user.role}</p>
                                 </div>
-                                <div className="flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-600 dark:bg-slate-800 dark:text-slate-300">
-                                    <BadgeCheck size={14} className="text-cyan-500" /> {user.status}
+                                <div>
+                                    <Badge variant={user.status === 'Active' ? 'success' : user.status === 'Reviewing' ? 'pending' : 'neutral'}>
+                                        <BadgeCheck size={14} className="text-primary" />
+                                        <span className="ml-1">{user.status}</span>
+                                    </Badge>
                                 </div>
                             </div>
                         ))}

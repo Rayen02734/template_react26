@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { getStudentRoster } from '../../data/teacherStore';
 import SectionHeader from '../../components/teacher/SectionHeader';
+import Badge from '../../components/ui/Badge';
 import { useLocale } from '../../context/LocaleContext';
 
 export default function TeacherStudents() {
@@ -22,7 +23,7 @@ export default function TeacherStudents() {
                             <div>
                                 <div className="flex flex-wrap items-center gap-2">
                                     <p className="font-semibold text-slate-900 dark:text-white">{student.name}</p>
-                                    <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300">{student.attendance}</span>
+                                    <Badge variant={student.attendance === 'Ready' ? 'success' : 'neutral'} size="sm">{student.attendance}</Badge>
                                 </div>
                                 <p className="mt-2 text-sm text-slate-500">{student.courseTitle}</p>
                                 <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">{student.email}</p>
@@ -44,7 +45,7 @@ export default function TeacherStudents() {
                         </div>
                         <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-sm text-slate-500">
                             <span>{t('completion')}: {student.completion}</span>
-                            <span className="rounded-full bg-cyan-50 px-3 py-1 text-cyan-700 dark:bg-cyan-950/30 dark:text-cyan-300">{t('supportRecommended')}</span>
+                            <Badge variant="primary">{t('supportRecommended')}</Badge>
                         </div>
                     </div>
                 ))}

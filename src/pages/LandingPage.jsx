@@ -3,6 +3,7 @@ import { ArrowRight, BookOpen, BrainCircuit, GraduationCap, PlayCircle, Sparkles
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Card from '../components/ui/Card';
+import Badge from '../components/ui/Badge';
 import Button from '../components/ui/Button';
 import { useLocale } from '../context/LocaleContext';
 import SignInPage from './SignInPage';
@@ -116,7 +117,7 @@ export default function LandingPage() {
                                     <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.3em] text-cyan-600 dark:text-cyan-400">This week</p>
                                     <h2 className="mt-2 text-xl sm:text-2xl font-semibold text-slate-950 dark:text-white">Your momentum is building</h2>
                                 </div>
-                                <div className="rounded-full bg-cyan-50 px-3 py-1 text-xs sm:text-sm font-semibold text-cyan-700 shadow-sm whitespace-nowrap dark:bg-cyan-500/20 dark:text-cyan-200">+12% growth</div>
+                                <Badge variant="primary" size="sm">+12% growth</Badge>
                             </div>
                             <div className="mt-4 sm:mt-6 grid gap-3 sm:gap-4 sm:grid-cols-2">
                                 <div className="rounded-[20px] border border-slate-200 bg-slate-50 p-4 sm:p-5 shadow-sm dark:border-slate-600 dark:bg-slate-800/50">
@@ -140,7 +141,7 @@ export default function LandingPage() {
                                         <p className="text-sm sm:text-base font-semibold text-slate-900 dark:text-white">Design systems sprint</p>
                                         <p className="text-xs sm:text-sm text-slate-500 mt-1">Today · 6:30 PM</p>
                                     </div>
-                                    <div className="rounded-full bg-emerald-500/10 px-3 py-1 text-xs sm:text-sm font-semibold text-emerald-600 whitespace-nowrap">Ready</div>
+                                    <Badge variant="success" size="sm">Ready</Badge>
                                 </div>
                             </div>
                         </div>

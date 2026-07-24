@@ -29,10 +29,11 @@ export default function Navbar() {
     ];
 
     return (
-        <header className="border-b border-slate-200 bg-white/80 text-slate-900 backdrop-blur dark:border-slate-800 dark:bg-slate-950/90 dark:text-white">
+        <header className="border-b border-card-border bg-page-bg text-text-primary">
             <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-                <Link to="/" className="text-xl font-semibold tracking-wide">
-                    GrowUp
+                <Link to="/" className="text-2xl font-extrabold tracking-tight flex items-center gap-2">
+                    <span>Grow</span>
+                    <span className="text-primary">Up</span>
                 </Link>
                 <nav className="hidden items-center gap-6 md:flex">
                     {navLinks.map((link) => (
@@ -40,32 +41,31 @@ export default function Navbar() {
                             key={link.to}
                             to={link.to}
                             className={({ isActive }) =>
-                                isActive ? 'text-cyan-500' : 'text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white'
+                                isActive ? 'text-primary font-semibold' : 'text-text-secondary hover:text-text-primary'
                             }
                         >
                             {link.label}
                         </NavLink>
                     ))}
                 </nav>
-                <div className="flex items-center gap-2">
-                    {languages.map(({ code, flag, label }) => (
-                        <button
-                            key={code}
-                            type="button"
-                            onClick={() => setLocale(code)}
-                            className={`rounded-full border px-3 py-2 text-lg transition ${locale === code
-                                ? 'border-cyan-500 bg-cyan-500 text-white'
-                                : 'border-slate-300 bg-white text-slate-700 hover:border-slate-400 hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-950 dark:text-white dark:hover:border-slate-500 dark:hover:bg-slate-900'
-                                }`}
-                            aria-label={label}
-                        >
-                            {flag}
-                        </button>
-                    ))}
+                <div className="flex items-center gap-3">
+                    <div className="hidden sm:flex items-center gap-2 bg-white rounded-full p-1 border border-card-border">
+                        {languages.map(({ code, flag }) => (
+                            <button
+                                key={code}
+                                type="button"
+                                onClick={() => setLocale(code)}
+                                className={`px-3 py-1 text-sm rounded-full transition ${locale === code ? 'bg-primary text-white' : 'text-text-primary'}`}
+                                aria-label={code}
+                            >
+                                {flag}
+                            </button>
+                        ))}
+                    </div>
                     <button
                         onClick={toggleTheme}
                         type="button"
-                        className="rounded-full border border-slate-300 px-3 py-2 text-lg dark:border-slate-700"
+                        className="rounded-xl border border-card-border px-3 py-2 text-lg"
                         aria-label="Toggle theme"
                     >
                         {theme === 'dark' ? '☀️' : '🌙'}
@@ -73,16 +73,16 @@ export default function Navbar() {
                     {user ? (
                         <button
                             onClick={handleLogout}
-                            className="rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-700 dark:bg-cyan-600 dark:text-slate-950 dark:hover:bg-cyan-500"
+                            className="rounded-xl bg-white/90 px-4 py-2 text-sm font-semibold text-text-primary border border-card-border"
                         >
                             {t('logout')}
                         </button>
                     ) : (
                         <>
-                            <Link to="/login" className="text-sm font-semibold text-slate-700 hover:text-cyan-600 dark:text-slate-300 dark:hover:text-cyan-400">
+                            <Link to="/login" className="text-sm font-semibold text-text-primary hover:text-primary">
                                 {t('signIn')}
                             </Link>
-                            <Link to="/register" className="rounded-full bg-cyan-500 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400 dark:bg-cyan-600 dark:text-white dark:hover:bg-cyan-500">
+                            <Link to="/register" className="rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary-hover">
                                 {t('joinNow')}
                             </Link>
                         </>
