@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, BookOpen, BrainCircuit, CalendarDays, CheckCircle2, Clock3, CreditCard, Download, ExternalLink, Sparkles, Trophy, Video, Zap } from 'lucide-react';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
+import KpiCard from '../components/ui/KpiCard';
 import StudentSidebar from '../components/StudentSidebar';
 import Badge from '../components/ui/Badge';
 import { useAuth } from '../context/AuthContext';
@@ -220,26 +221,42 @@ export default function StudentDashboard() {
                                     </div>
                                 ) : (
                                     <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-                                        <Card>
-                                            <p className="text-sm text-slate-500">Purchased courses</p>
-                                            <p className="mt-3 text-3xl font-semibold text-slate-950 dark:text-white">{purchasedCourses.length}</p>
-                                            <p className="mt-2 text-sm text-cyan-600">{overviewStats.completed} completed</p>
-                                        </Card>
-                                        <Card>
-                                            <p className="text-sm text-slate-500">Learning progress</p>
-                                            <p className="mt-3 text-3xl font-semibold text-slate-950 dark:text-white">{overviewStats.averageProgress}%</p>
-                                            <p className="mt-2 text-sm text-cyan-600">Average across enrolled courses</p>
-                                        </Card>
-                                        <Card>
-                                            <p className="text-sm text-slate-500">Upcoming sessions</p>
-                                            <p className="mt-3 text-3xl font-semibold text-slate-950 dark:text-white">{overviewStats.upcomingSessions.length}</p>
-                                            <p className="mt-2 text-sm text-cyan-600">Live classes this week</p>
-                                        </Card>
-                                        <Card>
-                                            <p className="text-sm text-slate-500">Pending quizzes</p>
-                                            <p className="mt-3 text-3xl font-semibold text-slate-950 dark:text-white">{overviewStats.pendingQuizzes}</p>
-                                            <p className="mt-2 text-sm text-cyan-600">Ready for review</p>
-                                        </Card>
+                                        <KpiCard
+                                            label="Purchased courses"
+                                            value={purchasedCourses.length}
+                                            description={`${overviewStats.completed} completed`}
+                                            monogram="PC"
+                                            accent="lavender"
+                                            trend="+5.6%"
+                                            trendType="positive"
+                                        />
+                                        <KpiCard
+                                            label="Learning progress"
+                                            value={`${overviewStats.averageProgress}%`}
+                                            description="Average across enrolled courses"
+                                            monogram="LP"
+                                            accent="mint"
+                                            trend="+3.8%"
+                                            trendType="positive"
+                                        />
+                                        <KpiCard
+                                            label="Upcoming sessions"
+                                            value={overviewStats.upcomingSessions.length}
+                                            description="Live classes this week"
+                                            monogram="US"
+                                            accent="peach"
+                                            trend="+12.4%"
+                                            trendType="positive"
+                                        />
+                                        <KpiCard
+                                            label="Pending quizzes"
+                                            value={overviewStats.pendingQuizzes}
+                                            description="Ready for review"
+                                            monogram="PQ"
+                                            accent="pink"
+                                            trend="-1.2%"
+                                            trendType="negative"
+                                        />
                                     </div>
                                 )}
 

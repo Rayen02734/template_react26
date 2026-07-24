@@ -1,10 +1,10 @@
+import Badge from '../components/ui/Badge';
+
 const users = [
     { name: 'Mina Chen', email: 'mina@example.com', status: 'Active' },
     { name: 'Leo Alvarez', email: 'leo@example.com', status: 'Pending' },
     { name: 'Sara Kim', email: 'sara@example.com', status: 'Active' },
 ];
-
-import Badge from '../components/ui/Badge';
 
 export default function AdminUsers() {
     return (

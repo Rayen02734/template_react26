@@ -1,11 +1,13 @@
-import { Activity, ArrowUpRight, BadgeCheck, Clock3, Sparkles } from 'lucide-react';
+import { BadgeCheck, Clock3, Sparkles } from 'lucide-react';
 import Card from '../components/ui/Card';
 import Badge from '../components/ui/Badge';
+import KpiCard from '../components/ui/KpiCard';
 
 const cards = [
-    { title: 'Revenue', value: '$48.2K', note: '+18.2% this month', accent: 'cyan' },
-    { title: 'Students', value: '8,420', note: '+320 new learners', accent: 'violet' },
-    { title: 'Active courses', value: '124', note: '12 launching soon', accent: 'emerald' },
+    { title: 'Users', value: '124,530', description: 'Registered users', monogram: 'Us', accent: 'lavender', trend: '+8.2%', trendType: 'positive' },
+    { title: 'Courses', value: '2,412', description: 'Active courses', monogram: 'Co', accent: 'mint', trend: '+3.1%', trendType: 'positive' },
+    { title: 'Revenue', value: '86,400 TND', description: 'This month', monogram: 'Rv', accent: 'peach', trend: '+14.6%', trendType: 'positive' },
+    { title: 'Completion', value: '94%', description: 'Completion rate', monogram: 'Cp', accent: 'pink', trend: '-1.4%', trendType: 'negative' },
 ];
 
 const recentUsers = [
@@ -34,16 +36,18 @@ export default function AdminOverview() {
                 </button>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="grid gap-4 md:grid-cols-4">
                 {cards.map((card) => (
-                    <Card key={card.title} className="transition duration-200 hover:-translate-y-1">
-                        <div className="flex items-center justify-between">
-                            <p className="text-sm text-text-secondary">{card.title}</p>
-                            <div className="rounded-full bg-cyan-50 p-2 text-cyan-600 dark:bg-cyan-950/40"><Activity size={16} /></div>
-                        </div>
-                        <p className="mt-4 text-2xl font-semibold text-text-primary">{card.value}</p>
-                        <p className="mt-2 flex items-center gap-1 text-sm text-primary"><ArrowUpRight size={14} /> {card.note}</p>
-                    </Card>
+                    <KpiCard
+                        key={card.title}
+                        label={card.title}
+                        value={card.value}
+                        description={card.description}
+                        monogram={card.monogram}
+                        accent={card.accent}
+                        trend={card.trend}
+                        trendType={card.trendType}
+                    />
                 ))}
             </div>
 
